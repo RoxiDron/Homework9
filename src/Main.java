@@ -45,7 +45,6 @@ public class Main {
             left++;
             right--;
         }
-
         for (char c : reverseFullName) {
             System.out.print(c);
         }
