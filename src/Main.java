@@ -16,12 +16,12 @@ public class Main {
         for (int i = 1; i < weeklyPayments.length; i++){
             if (weeklyPayments[i] > maxWeeklypayments) {
                 maxWeeklypayments = weeklyPayments[i];
-            if (weeklyPayments[i] < minWeeklypayments)
-                minWeeklypayments = weeklyPayments[i];
+                if (weeklyPayments[i] < minWeeklypayments)
+                    minWeeklypayments = weeklyPayments[i];
             }
         }
 
-         System.out.println("Минимальная сумма трат за неделю составила " + minWeeklypayments + " рублей. Максимальная сумма трат за неделю составила " + maxWeeklypayments + " рублей");
+        System.out.println("Минимальная сумма трат за неделю составила " + minWeeklypayments + " рублей. Максимальная сумма трат за неделю составила " + maxWeeklypayments + " рублей");
 
         System.out.println("Task 3");
         int total = 0;
@@ -34,9 +34,19 @@ public class Main {
 
         System.out.println("Task 4");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i --){
-            System.out.print(reverseFullName[i]);
-        }
+        int left = 0;
+        int right = reverseFullName.length - 1;
 
+        while (left < right) {
+            char temp = reverseFullName[left];
+            reverseFullName[left] = reverseFullName[right];
+            reverseFullName[right] = temp;
+
+            left++;
+            right--;
+        }
+        for (char c : reverseFullName) {
+            System.out.print(c);
+        }
     }
 }
